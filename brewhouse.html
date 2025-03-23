@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brewhouse</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="experience.css" />
+    <link rel="stylesheet" href="team.css" />
+    <link rel="stylesheet" href="sound.css" />
+    <link rel="stylesheet" href="slider.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="cookie.css" />
+    <link rel="stylesheet" href="story.css" />
+    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="news.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        /* overflow: hidden; */
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-container">
+      <div class="nav-links">
+        <div class="nav-item">
+          <div class="nav-indicator"></div>
+          <a href="#experiences">EXPERIENCES</a>
+        </div>
+        <div class="nav-item">
+          <div class="nav-indicator"></div>
+          <a href="#story">OUR STORY</a>
+        </div>
+        <div class="nav-item">
+          <div class="nav-indicator"></div>
+          <a href="#Products">OUR PRODUCTS</a>
+        </div>
+        <div class="nav-item">
+          <div class="nav-indicator"></div>
+        </div>
+      </div>
+    </nav>
+    <!-- Collection Slider Section -->
+    <section class="beer-slider-section">
+      <div class="beer-slider-container">
+        <div class="beer-slider-wrapper">
+          <div class="beer-slide" data-index="0">
+            <div class="beer-slide-background"></div>
+            <img
+              src="drinks/trophy.jpg"
+              alt="Trophy Beer"
+              class="beer-product-image"
+              id="trophy-beer"
+            />
+          </div>
+          <div class="beer-slide" data-index="1">
+            <div class="beer-slide-background"></div>
+            <img
+              src="drinks/budweiser.jpg"
+              alt="Budweiser Beer"
+              class="beer-product-image"
+              id="budweiser-beer"
+            />
+          </div>
+          <div class="beer-slide" data-index="2">
+            <div class="beer-slide-background"></div>
+            <img
+              src="drinks/gulder.jpg"
+              alt="Gulder Beer"
+              class="beer-product-image"
+              id="gulder-beer"
+            />
+          </div>
+          <div class="beer-slide" data-index="3">
+            <div class="beer-slide-background"></div>
+            <img
+              src="drinks/heinekin.jpg"
+              alt="Heineken"
+              class="beer-product-image"
+              id="Heineken"
+            />
+          </div>
+          <div class="beer-slide" data-index="4">
+            <div class="beer-slide-background"></div>
+            <img
+              src="drinks/star.jpg"
+              alt="star-beer"
+              class="beer-product-image"
+              id="star-beer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--sound toggle-->
+    <div class="music-control" id="musicControl">
+      <div class="toggle" id="toggle">
+        <div class="toggle-slider"></div>
+      </div>
+      <div class="status" id="status">Music is OFF</div>
+    </div>
+
+    <div class="notification" id="notification">
+      Click the toggle to play music
+      <button class="close-btn" id="close-btn">✕</button>
+    </div>
+    <!-- Hidden audio element -->
+    <audio id="musicPlayer" loop>
+      <!-- Using a placeholder audio file -->
+      <source src="asset/go-beyond-314301.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!--cart icon-->
+    <div class="cart-icon" id="cartIcon">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="cart-count">0</div>
+      <div class="cart-dropdown" id="cartDropdown">
+        <div class="cart-dropdown-header">
+          <div class="cart-dropdown-title">Your Cart</div>
+          <div class="cart-close"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">₦0.00</span>
+          </div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!---product section-->
+    <div class="container" id="Products">
+      <div class="shop-header">
+        <div class="shop-controls"></div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="drinks/gulder.jpg" alt="Gulder Beer" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-title">Gulder Beer</h2>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="rating-count">125 Reviews</span>
+            </div>
+            <div class="product-price">
+              <span class="currency">₦</span>
+              <span>750</span>
+              <span class="price-note">/bottle</span>
+            </div>
+            <p class="product-description">
+              Gulder Beer is a premium lager with a rich golden color and a
+              crisp, refreshing taste. Brewed with the finest ingredients for a
+              smooth finish.
+            </p>
+            <button
+              class="add-to-cart"
+              data-id="1"
+              data-name="Gulder Beer"
+              data-price="750"
+              data-image="https://www.dropbox.com/scl/fi/yjqv0qnwoesouva60e6bs/gulder.jpg?rlkey=nd8u6dzdftry5eitnzrs9r6rx&raw=1"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="drinks/star.jpg" alt="Star Beer" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-title">Star Beer</h2>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">246 Reviews</span>
+            </div>
+            <div class="product-price">
+              <span class="currency">₦</span>
+              <span>700</span>
+              <span class="price-note">/bottle</span>
+            </div>
+            <p class="product-description">
+              Star Beer is Nigeria's first indigenous beer. It's a pale lager
+              with a clean taste and subtle hop bitterness, perfect for any
+              occasion.
+            </p>
+            <button
+              class="add-to-cart"
+              data-id="2"
+              data-name="Star Beer"
+              data-price="700"
+              data-image="https://www.dropbox.com/scl/fi/k2v4utac70mraabm6uixe/star.jpg?rlkey=obsu7n0768cid5euzwmugwjb6&raw=1"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="drinks/heinekin.jpg" alt="Heineken" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-title">Heineken</h2>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="rating-count">312 Reviews</span>
+            </div>
+            <div class="product-price">
+              <span class="currency">₦</span>
+              <span>850</span>
+              <span class="price-note">/bottle</span>
+            </div>
+            <p class="product-description">
+              Heineken is a premium international beer with a distinctive green
+              bottle. It offers a balanced taste with a fruity aroma and a mild
+              bitter finish.
+            </p>
+            <button
+              class="add-to-cart"
+              data-id="3"
+              data-name="Heineken"
+              data-price="850"
+              data-image="https://www.dropbox.com/scl/fi/3x0v74lo7gr4054j916rm/Heineken.jpg?rlkey=gcasxm6nd6ipm4mgvuo7uvj6q&raw=1"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="drinks/trophy.jpg" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-title">Trophy Lager</h2>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">183 Reviews</span>
+            </div>
+            <div class="product-price">
+              <span class="currency">₦</span>
+              <span>650</span>
+              <span class="price-note">/bottle</span>
+            </div>
+            <p class="product-description">
+              Trophy Lager is a full-bodied beer with a distinctive taste.
+              Popular in Western Nigeria, it's known for its smooth texture and
+              satisfying flavor.
+            </p>
+            <button
+              class="add-to-cart"
+              data-id="4"
+              data-name="Trophy Lager"
+              data-price="650"
+              data-image="https://www.dropbox.com/scl/fi/l0xuxn3cqjuq1xjwz8e5d/trophy.jpg?rlkey=go1xjykq7dnu1ngktke40u9r8&raw=1"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="drinks/legend.jpg" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-title">Legend Extra Stout</h2>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">157 Reviews</span>
+            </div>
+            <div class="product-price">
+              <span class="currency">₦</span>
+              <span>800</span>
+              <span class="price-note">/bottle</span>
+            </div>
+            <p class="product-description">
+              Legend Extra Stout is a full-bodied, dark beer with a rich creamy
+              head. It offers a blend of roasted malt flavors with hints of
+              caramel and chocolate.
+            </p>
+            <button
+              class="add-to-cart"
+              data-id="5"
+              data-name="Legend Extra Stout"
+              data-price="800"
+              data-image="https://www.dropbox.com/scl/fi/82r89joo477p1dgq7qtsi/legend.jpg?rlkey=ogqu7sfc8ur6qb5y6o89jbcfq&raw=1"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="drinks/budweiser.jpg" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-title">Budweiser</h2>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="rating-count">157 Reviews</span>
+            </div>
+            <div class="product-price">
+              <span class="currency">₦</span>
+              <span>1,000</span>
+              <span class="price-note">/bottle</span>
+            </div>
+            <p class="product-description">
+              Legend Extra Stout is a full-bodied, dark beer with a rich creamy
+              head. It offers a blend of roasted malt flavors with hints of
+              caramel and chocolate.
+            </p>
+            <button
+              class="add-to-cart"
+              data-id="6"
+              data-name="Budweiser"
+              data-price="1000"
+              data-image="https://www.dropbox.com/scl/fi/3aiyl4jikns2cotw1g6q6/Budweiser.jpg?rlkey=ho5ua6y4fd49huax52jpctavd&raw=1"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--story section-->
+    <div class="story-container" id="story">
+      <div class="boards-container" id="slides">
+        <!-- Page 1 -->
+        <div class="page" data-index="0">
+          <div class="page-image">
+            <img src="gallery/1.jpg" alt="Nigerian Brewery Origin Story" />
+          </div>
+          <div class="page-content">
+            <div class="year-badge animated-text">EST. 1959</div>
+            <h2 class="animated-text">THE HERITAGE OF TASTE</h2>
+            <p class="animated-text">
+              On December 31st, 1959, our founder Chief Oluwole Adetoye signed a
+              99-year lease for our first brewery in Lagos. With a vision that
+              transcended generations, he established what would become
+              Nigeria's most beloved brewing tradition, creating a legacy that
+              continues to shape the taste of our nation.
+            </p>
+            <p class="animated-text">
+              From those humble beginnings to becoming a national icon, our
+              commitment to quality has never wavered.
+            </p>
+          </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="page" data-index="1">
+          <div class="page-image">
+            <img src="gallery/2.jpg" alt="Nigerian Brewery Craftsmanship" />
+          </div>
+          <div class="page-content">
+            <div class="year-badge animated-text">CRAFTSMANSHIP</div>
+            <h2 class="animated-text">MASTERS OF BREWING</h2>
+            <p class="animated-text">
+              For over six decades, our master brewers have perfected the art of
+              brewing. Using only the finest ingredients, our recipes combine
+              traditional methods with modern innovation to create distinct
+              flavors that have become part of Nigerian celebrations.
+            </p>
+            <p class="animated-text">
+              Every bottle represents our commitment to excellence and the
+              meticulous attention to detail that has defined us since the
+              beginning.
+            </p>
+          </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="page" data-index="2">
+          <div class="page-image">
+            <img src="gallery/3.jpg" alt="Nigerian Brewery Community" />
+          </div>
+          <div class="page-content">
+            <div class="year-badge animated-text">COMMUNITY</div>
+            <h2 class="animated-text">BREWING FOR NIGERIA</h2>
+            <p class="animated-text">
+              From Lagos to Abuja, from Kano to Port Harcourt, our brewery has
+              been bringing Nigerians together. We've been part of weddings,
+              naming ceremonies, milestone achievements, and everyday moments of
+              joy across the nation.
+            </p>
+            <p class="animated-text">
+              Our commitment extends beyond brewing – we invest in local
+              farmers, support community initiatives, and create economic
+              opportunities throughout Nigeria.
+            </p>
+          </div>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="page" data-index="3">
+          <div class="page-image">
+            <img src="gallery/4.jpg" alt="Nigerian Brewery Innovation" />
+          </div>
+          <div class="page-content">
+            <div class="year-badge animated-text">INNOVATION</div>
+            <h2 class="animated-text">BREWING TOMORROW</h2>
+            <p class="animated-text">
+              While honoring our traditions, we continuously innovate. Our
+              state-of-the-art facilities combine the latest brewing technology
+              with sustainable practices, reducing our environmental footprint
+              while enhancing the quality of our products.
+            </p>
+            <p class="animated-text">
+              From award-winning lagers to bold new craft selections, we're
+              constantly exploring new flavors that resonate with both
+              traditional beer lovers and the next generation of Nigerians.
+            </p>
+          </div>
+        </div>
+
+        <!-- Page 5 -->
+        <div class="page" data-index="4">
+          <div class="page-image">
+            <img src="gallery/5.jpg" alt="Nigerian Brewery Legacy" />
+          </div>
+          <div class="page-content">
+            <div class="year-badge animated-text">OUR PROMISE</div>
+            <h2 class="animated-text">THE TASTE OF CELEBRATION</h2>
+            <p class="animated-text">
+              From our founder's vision to today's achievements, we continue to
+              create beverages that bring Nigerians together. Our story is one
+              of passion, resilience, and excellence – values that are infused
+              in every drop we brew.
+            </p>
+            <p class="animated-text">
+              As we look to the future, we remain committed to our heritage
+              while embracing innovation, ensuring that Nigerian Brewery remains
+              the taste of celebration for generations to come.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="navigation" id="nav-dots">
+        <div class="nav-dot active" data-index="0"></div>
+        <div class="nav-dot" data-index="1"></div>
+        <div class="nav-dot" data-index="2"></div>
+        <div class="nav-dot" data-index="3"></div>
+        <div class="nav-dot" data-index="4"></div>
+      </div>
+
+      <!-- Arrow Navigation -->
+      <div class="arrow-nav arrow-prev" id="prev">
+        <svg viewBox="0 0 24 24">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </div>
+      <div class="arrow-nav arrow-next" id="next">
+        <svg viewBox="0 0 24 24">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar" id="progress"></div>
+    </div>
+    <!--team section-->
+    <div class="about-container">
+      <div class="team-section">
+        <div class="team-grid" id="team-grid">
+          <!-- Team members will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </div>
+    <!-- Experience Section -->
+    <section class="brewing-experience" id="experiences">
+      <div class="experience-container" id="experienceContainer">
+        <!-- Experience Item 1 -->
+        <div class="experience-item">
+          <div class="experience-image">
+            <img src="experience/legacy.jpeg" alt="Nigerian Brewing Legacy" />
+          </div>
+          <div class="experience-content">
+            <div class="experience-date">ESTABLISHED 1759</div>
+            <h2 class="experience-title">THE LEASE OF LIFE</h2>
+            <p class="experience-description">
+              On 31st December 1759, the man signed a NINE THOUSAND YEAR lease
+              on St. James's Gate. If that's not belief, we don't know what is.
+              And now we can see that his belief was a vision. From our legacy
+              of philanthropy to how we have been taking care of our people for
+              over 200 years.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="experience-item">
+          <div class="experience-image">
+            <img
+              src="experience/traditions.webp"
+              alt="Nigerian Brewing Tradition"
+            />
+          </div>
+          <div class="experience-content">
+            <div class="experience-date">SINCE 1820</div>
+            <h2 class="experience-title">MASTER BREWERS' HERITAGE</h2>
+            <p class="experience-description">
+              For generations, our master brewers have passed down the secrets
+              of our unique brewing process. Each batch of our premium Nigerian
+              beer is crafted with precision and care, using methods that have
+              stood the test of time while embracing modern innovations to
+              ensure exceptional quality.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Item 3 -->
+        <div class="experience-item">
+          <div class="experience-image">
+            <img
+              src="experience/ingredients.jpeg"
+              alt="Nigerian Brewing Ingredients"
+            />
+          </div>
+          <div class="experience-content">
+            <div class="experience-date">LOCAL SOURCING</div>
+            <h2 class="experience-title">NIGERIAN INGREDIENTS</h2>
+            <p class="experience-description">
+              We take pride in our commitment to Nigerian agriculture, sourcing
+              over 70% of our raw materials locally. Our partnerships with
+              farmers across Nigeria have created sustainable livelihoods while
+              ensuring the highest quality ingredients for our distinctive
+              brews.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Item 4 -->
+        <div class="experience-item">
+          <div class="experience-image">
+            <img
+              src="experience/Community.jpeg"
+              alt="Nigerian Brewing Community"
+            />
+          </div>
+          <div class="experience-content">
+            <div class="experience-date">COMMUNITY FIRST</div>
+            <h2 class="experience-title">BREWING FOR NIGERIA</h2>
+            <p class="experience-description">
+              Beyond creating exceptional beers, we've built a legacy of
+              community support across Nigeria. From our clean water initiatives
+              to educational programs and healthcare support, we believe in
+              brewing a better future for all Nigerians with every bottle we
+              produce.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Item 5 -->
+        <div class="experience-item">
+          <div class="experience-image">
+            <img
+              src="experience/innovation.jpeg"
+              alt="Nigerian Brewing Innovation"
+            />
+          </div>
+          <div class="experience-content">
+            <div class="experience-date">LOOKING FORWARD</div>
+            <h2 class="experience-title">BREWING INNOVATION</h2>
+            <p class="experience-description">
+              While honoring our rich heritage, we continuously push the
+              boundaries of brewing excellence. Our state-of-the-art facilities
+              combine traditional brewing wisdom with cutting-edge technology,
+              creating distinctive flavors that define the Nigerian beer
+              experience for generations to come.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="experience-nav">
+        <button
+          class="experience-nav-btn prev-btn"
+          aria-label="Previous experience"
+        >
+          &#8592;
+        </button>
+        <button
+          class="experience-nav-btn next-btn"
+          aria-label="Next experience"
+        >
+          &#8594;
+        </button>
+      </div>
+
+      <!-- Indicators -->
+      <div class="experience-indicators" id="experienceIndicators"></div>
+    </section>
+    <!--news section-->
+    <div class="news-container">
+      <div class="news-carousel">
+        <!-- News Item 1 -->
+        <div class="news-item">
+          <div class="news-image-container">
+            <img
+              src="experience/traditions.jpeg"
+              alt="Brewery legacy in Dublin"
+            />
+          </div>
+          <div class="news-content">
+            <div class="slide-category">COMPANY HISTORY</div>
+            <h3 class="slide-title">
+              THE LEASE OF LIFE: Our 200+ Year Legacy in Nigerian Brewing
+            </h3>
+            <div class="slide-date">March 15, 2025</div>
+          </div>
+        </div>
+
+        <!-- News Item 2 -->
+        <div class="news-item">
+          <div class="news-image-container">
+            <img
+              src="gallery/images-8.jpeg"
+              alt="Beer with a Latin Vibe Campaign"
+            />
+          </div>
+          <div class="news-content">
+            <div class="slide-category">BRAND ACTIVITIES</div>
+            <h3 class="slide-title">
+              Imperial Lager Ignites Nigeria with "Beer with a Latin Vibe"
+              Campaign
+            </h3>
+            <div class="slide-date">February 12, 2025</div>
+          </div>
+        </div>
+
+        <!-- News Item 3 -->
+        <div class="news-item">
+          <div class="news-image-container">
+            <img src="gallery/6.jpg" alt="New brewing facility" />
+          </div>
+          <div class="news-content">
+            <div class="slide-category">EXPANSION</div>
+            <h3 class="slide-title">
+              Nigeria Brewing Company Opens New State-of-the-Art Facility in
+              Lagos
+            </h3>
+            <div class="slide-date">January 30, 2025</div>
+          </div>
+        </div>
+
+        <!-- News Item 4 -->
+        <div class="news-item">
+          <div class="news-image-container">
+            <img
+              src="gallery/images-9.jpeg"
+              alt="Sustainable brewing initiative"
+            />
+          </div>
+          <div class="news-content">
+            <div class="slide-category">SUSTAINABILITY</div>
+            <h3 class="slide-title">
+              Our Commitment to Sustainable Brewing: 2025 Environmental Impact
+              Report
+            </h3>
+            <div class="slide-date">January 18, 2025</div>
+          </div>
+        </div>
+
+        <!-- News Item 5 -->
+        <div class="news-item">
+          <div class="news-image-container">
+            <img
+              src="drinks/66c3fa119419183.609d0424794ef.jpg"
+              alt="Beer festival"
+            />
+          </div>
+          <div class="news-content">
+            <div class="slide-category">EVENTS</div>
+            <h3 class="slide-title">
+              Nigeria Brewing Company Announces Annual Beer Festival in Abuja
+            </h3>
+            <div class="slide-date">December 20, 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Controls -->
+      <div class="nav-button nav-prev">&#10094;</div>
+      <div class="nav-button nav-next">&#10095;</div>
+
+      <!-- Dots navigation -->
+      <div class="dots-container"></div>
+    </div>
+
+    <!-- Timer indicator -->
+    <div class="timer-container">
+      <div class="timer-indicator"></div>
+    </div>
+
+    <!-- age verification
+    <div class="age-container">
+      <div class="age-verification" id="ageVerificationModal">
+        <h1>Age Verification Required</h1>
+        <p>
+          You must be of legal drinking age to enter this site. Please verify
+          your age to continue.
+        </p>
+
+        <div class="error-message" id="errorMessage">
+          Please enter a valid date of birth.
+        </div>
+
+        <div class="date-inputs">
+          <select id="monthSelect" aria-label="Month">
+            <option value="" disabled selected>Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+
+          <select id="daySelect" aria-label="Day">
+            <option value="" disabled selected>Day</option>
+          </select>
+
+          <select id="yearSelect" aria-label="Year">
+            <option value="" disabled selected>Year</option>
+          </select>
+        </div>
+
+        <button id="verifyButton">CONFIRM & ENTER</button>
+        <a href="https://www.responsibility.org" class="exit-link">Exit</a>
+      </div>
+    </div> -->
+
+    <!--distance calculator-->
+    <!-- <div id="popup-container">
+      <div id="popup-content" class="popup-content">
+        <button id="close-btn">&times;</button>
+        <h2>Brewery Distance Calculator</h2>
+        <div class="popup-body">
+          <p class="location-status" id="location-status">
+            Detecting your location...
+          </p>
+
+          <div class="brewery-info">
+            <h3>Destination:</h3>
+            <p>
+              <strong>Enugu Brewing Company</strong><br />
+              215 Ogui Road, Enugu, Nigeria
+            </p>
+          </div>
+
+          <div id="manual-location">
+            <h3>Enter Your Location</h3>
+            <input
+              type="text"
+              id="location-input"
+              placeholder="Enter city or address"
+            />
+            <button id="submit-location">Submit</button>
+            <p id="manual-error" class="error-text" style="display: none"></p>
+          </div>
+
+          <button id="calculate-btn" disabled>
+            Calculate Distance & Fee
+            <span
+              class="loading-indicator"
+              id="loading"
+              style="display: none"
+            ></span>
+          </button>
+
+          <div id="results-container">
+            <div class="info-row">
+              <strong>Distance:</strong>
+              <span id="distance-result">-</span>
+            </div>
+            <div class="info-row">
+              <strong>Estimated Travel Time:</strong>
+              <span id="time-result">-</span>
+            </div>
+            <div class="info-row">
+              <strong>Transportation Fee:</strong>
+              <span id="fee-result">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Footer Section -->
+    <footer class="footer-wrapper">
+      <div class="footer-content">
+        <div class="footer-subscribe">
+          <h2 class="footer-title">Keep Updated With All Things Enugu Brew</h2>
+          <form class="footer-form">
+            <input
+              type="email"
+              class="footer-input"
+              placeholder="Your email address"
+              required
+            />
+            <button type="submit" class="footer-button">SUBSCRIBE</button>
+          </form>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 320 512">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 512 512">
+                <path
+                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 448 512">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-product">
+          <div class="footer-product-info">
+            <p>Enugu Brewing Company produces and packages</p>
+            <p>premium beer products and refreshing drinks,</p>
+            <p>with extensive activities across Eastern Nigeria.</p>
+          </div>
+          <img
+            src="drinks/66c3fa119419183.609d0424794ef.jpg"
+            alt="Nigerian Brewing Company Beer"
+            class="footer-product-image"
+          />
+          <div class="footer-navigation">
+            <a href="#story">OUR STORY</a>
+            <a href="#experiences">EXPERIENCES</a>
+            <a href="#Products">OUR PRODUCTS</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>
+          &copy; Copyright by Enugu Brewing Company. All Rights Reserved. 2025
+        </p>
+      </div>
+    </footer>
+
+    <!-- Cookie Popup -->
+    <div id="cookie-popup">
+      <div class="cookie-content">
+        <div class="cookie-title">Cookie Policy</div>
+        <div class="cookie-text">
+          We use cookies to enhance your experience on our website, analyze site
+          traffic, and personalize content. By clicking "Accept All", you
+          consent to our use of cookies as described in our Privacy Policy. You
+          can also customize your preferences.
+        </div>
+      </div>
+      <div class="cookie-buttons">
+        <button class="cookie-btn customize-btn">Customize</button>
+        <button class="cookie-btn accept-btn" id="accept-cookies">
+          Accept All
+        </button>
+      </div>
+    </div>
+    <script src="experience.js"></script>
+    <script src="slider.js"></script>
+    <script src="nav.js"></script>
+    <script src="cookie.js"></script>
+    <script src="product.js"></script>
+    <script src="sound.js"></script>
+    <script src="story.js"></script>
+    <script src="team.js"></script>
+    <script src="news.js"></script>
+    <script src="footer.js"></script>
+    <script src="title.js"></script>
+  </body>
+</html>

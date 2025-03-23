@@ -1,0 +1,104 @@
+:root {
+  --primary-bg: #121212;
+  --text-color: #f5f5f5;
+  --accent-color: #ffffff;
+  --button-hover: #333333;
+}
+/* Cookie Popup */
+#cookie-popup {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(18, 18, 18, 0.95);
+  color: var(--text-color);
+  padding: 20px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#cookie-popup.show {
+  bottom: 0;
+}
+
+.cookie-content {
+  flex: 1;
+  max-width: 80%;
+}
+
+.cookie-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cookie-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.cookie-btn {
+  padding: 10px 20px;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.accept-btn {
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+}
+
+.accept-btn:hover {
+  background-color: #e6e6e6;
+}
+
+.customize-btn {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.customize-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  #cookie-popup {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .cookie-content {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .cookie-buttons {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

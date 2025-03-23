@@ -1,0 +1,121 @@
+/* Experience Section Styles */
+.brewing-experience {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  max-width: 1150px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.experience-container {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.experience-item {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    flex-direction: column;
+  }
+}
+
+.experience-image {
+  flex: 1;
+  min-width: 50%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.experience-content {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.experience-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.experience-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.experience-date {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.experience-nav {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.experience-nav-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.experience-nav-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.experience-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.experience-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.experience-indicator.active {
+  background-color: #000000;
+  transform: scale(1.2);
+}

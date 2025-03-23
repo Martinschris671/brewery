@@ -1,0 +1,223 @@
+/* Footer Styles */
+.footer-wrapper {
+  margin-top: 2rem;
+
+  background-color: white;
+  color: black;
+  padding: 3rem 0;
+  font-family: "Arial", sans-serif;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-subscribe {
+  flex: 1 1 300px;
+  margin-bottom: 2rem;
+}
+
+.footer-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.footer-form {
+  display: flex;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  position: relative;
+}
+
+.footer-input {
+  flex-grow: 1;
+  padding: 0.8rem;
+  border: 1px solid black;
+  font-size: 1rem;
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.footer-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  height: 50px;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.footer-button:hover {
+  background-color: #333;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: black;
+}
+
+.footer-social a:hover svg {
+  fill: white;
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+  fill: black;
+  transition: fill 0.3s ease;
+}
+
+.footer-product {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-product-info {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.footer-product-info p {
+  margin: 0 0 0.5rem;
+  line-height: 1.6;
+}
+
+.footer-product-image {
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer-product-image:hover {
+  transform: rotate(-5deg);
+}
+
+.footer-navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-navigation a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: opacity 0.3s;
+}
+
+.footer-navigation a:hover {
+  opacity: 0.7;
+}
+
+.footer-navigation a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.footer-navigation a:hover::after {
+  width: 100%;
+}
+
+.footer-copyright {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-product {
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  .footer-product-info {
+    text-align: left;
+  }
+
+  .footer-navigation {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-form {
+    flex-direction: column;
+  }
+
+  .footer-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-title {
+    font-size: 1.8rem;
+  }
+
+  .footer-wrapper {
+    padding: 2rem 0;
+  }
+
+  .footer-content {
+    padding: 0 1rem;
+  }
+
+  .footer-product-image {
+    max-width: 150px;
+  }
+}

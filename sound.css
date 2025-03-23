@@ -1,0 +1,129 @@
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#section1 {
+  background-color: black;
+}
+
+#section2 {
+  background-color: white;
+}
+
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  transition: all 0.2s ease;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  background-color: #9ca3af; /* Ash color */
+  border-radius: 34px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-slider {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle.active {
+  background-color: white;
+}
+
+.toggle.active .toggle-slider {
+  transform: translateX(26px);
+  background-color: black;
+}
+
+/* Light mode toggle styles */
+.light-mode .toggle {
+  background-color: #9ca3af;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.light-mode .toggle-slider {
+  background-color: black;
+}
+
+.light-mode .toggle.active {
+  background-color: black;
+}
+
+.light-mode .toggle.active .toggle-slider {
+  background-color: white;
+}
+
+.status {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.774);
+  color: white;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.light-mode .status {
+  color: black;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 10px 30px 10px 15px;
+  border-radius: 6px;
+  font-size: 12px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  display: none;
+  animation: bounce 2s infinite;
+  z-index: 100;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+}
